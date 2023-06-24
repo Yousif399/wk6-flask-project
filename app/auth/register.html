@@ -1,1 +1,25 @@
-add
+{% include 'nav.html' %}
+
+    
+{% block content %}
+
+
+<h2>Register page!</h2>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <form method="POST" class="col-5">
+            {{ form.hidden_tag() }}
+            
+            {{ form.username(class='form-control', placeholder="Username") }}
+            {{ form.email(class='form-control', placeholder="Email") }}
+            {{ form.password(class='form-control', placeholder="Password") }}
+            {{ form.confirm_password(class='form-control', placeholder="Confirm Password") }}
+            {{ form.submit(class='btn btn-primary', placeholder="Submit") }}
+            
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
