@@ -5,7 +5,20 @@ body{
   background-color: grey;
 }
 
+.test{
+    background-color: bisque;
+}
+
+#center{
+    display: block;
+    margin: auto;
+}
+
 .payEnt{
+    margin-left: 50%;
+    margin-right: 50
+}
+#payEnt{
     margin-left: 50%;
     margin-right: 50
 }
@@ -18,8 +31,8 @@ body{
     display: inline-block;
     ;
     /* display: block; */
-    margin-left: 35%;
-    margin-right: 50%;
+    margin-left: 50%;
+    margin-right: 35%;
     width: 1500px;
 }
 
