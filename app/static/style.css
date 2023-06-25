@@ -2,7 +2,46 @@
 body{
   line-height: 1.5;
   font-family: 'Poppins', sans-serif;
+  background-color: grey;
 }
+
+#home{
+    background-image: url('homepage.png');
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: .8;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: .5rem;
+    box-shadow: 4px 5px #888888;
+}
+
+.loginB{
+    margin-left: 50%;
+    margin-right: 50%;
+    width: 8rem;
+}
+.loginB:hover{
+    width: 10rem;
+    margin-left: 49%;
+}
+
+.sent{
+    margin-left: 45%;
+    margin-right: 45%;
+    min-width: 32rem;
+}
+.signUpB{
+    margin-left: 50%;
+    margin-right: 50%;
+    width: 8rem;
+}
+.signUpB:hover{
+    width: 10rem;
+    margin-left: 49%;
+}
+
 *{
   margin:0;
   padding:0;
