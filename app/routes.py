@@ -2,6 +2,7 @@ from app import app
 
 from flask import render_template, request, url_for, redirect
 # from .models import User, Product
+from .myfunctions import Amiibo
 from flask_login import current_user, login_required, login_user, logout_user
 
 @app.route('/')
@@ -56,5 +57,5 @@ def clear_products():
 @app.route('/product/<int:product_id>')
 # @login_required
 def product(product_id):
-    
+
     return render_template('ind-product.html')
