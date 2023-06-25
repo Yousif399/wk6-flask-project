@@ -1,45 +1,86 @@
-<header>
+<!doctype html>
+<html lang="en">
 
-</header>
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
 
 <body>
+
+  <main>
+    <header>
+        <link rel="stylesheet" href="../static/style.css">
     
-    <div>
-        <div class="container">
-            <div class="row">
-                <h3 class="col-6">Enter your payment details</h3>
-                <div>
-                    <form class="col-lg " action="">
-                        <input type="text" placeholder="Card number"
-                    </form>
-                    <form class="col-lg" action="">
-                        <input type="text" placeholder="Street address"
-                    </form>
-                    <form class="col-lg" action="">
-                        <input type="text" placeholder="Apt,unit, suite, etc (optional)"
-                    </form>
-                    <form class="col-lg" action="">
-                        <input type="text" placeholder="United States/Canada"
-                    </form>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <form class = "col-4">
-                            <input type="text" placeholder="City"
-                        </form>
-                        <form class = "col-2">
-                            <input type="text" placeholder="State"
-                        </form>
-                        <form class = "col-2">
-                            <input type="number" placeholder="Zip code"
-                        </form>
+    </header>
+    
+    <body>
+        <div class="container-fluid">
+            <div class="container p-2 d-flex justify-content-center form-control">
+                <div class="row justify-content-center">
+                    <h3 class="payEnt">Enter your payment details</h3>
+                    <div>
+                        <div class=" p-2 form-control">
+                            <form action="">
+                                <input type="text" placeholder="Card number"
+                            </form>
+                        </div>
+                        <div class=" p-2 form-control">
+                            <form action="">
+                                <input type="text" placeholder="Street address"
+                            </form>
+                        </div>
+                        <div class=" p-2 form-control">
+                            <form action="">
+                                <input type="text" placeholder="Apt,unit, suite, etc (optional)"
+                            </form>
+                        </div>
+                        <div class=" p-2 form-control">
+                            <form action="">
+                                <input type="text" placeholder="United States/Canada"
+                            </form>
+                        </div>
+                        <div class = "form-control p-2">
+                            <form  id="box1">
+                                <input type="text" placeholder="City"
+                            </form>
+                        </div>
+                        <div class=" p-2 form-control">
+                            <form id="box1">
+                                <input type="text" placeholder="State"
+                            </form>
+                        </div>
+                        <div class=" p-2 form-control">
+                            <form id="box1">
+                                <input type="number" placeholder="Zip code"
+                            </form>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    <div class="d-flex vr" style="height: 100%;">
-        <div class="vr"></div>
     </div>
-    <div></div>
-</div>
+    
+    </body>
+  </main>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
 </body>
+
+</html>
