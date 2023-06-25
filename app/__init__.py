@@ -8,26 +8,26 @@ from .auth.routes import auth
 from .models import db, User
 # from flask_migrate import Migrate
 from flask_login import LoginManager
+# from .models import db, User
+from flask_migrate import Migrate
+from flask_login import LoginManager
+from flask_moment import Moment
+
 app = Flask(__name__)
 
 app.config.from_object(Config)
 
-login = LoginManager()
+app.register_blueprint(auth)
+
+#enabling login persistence
+# login = LoginManager()
 
 # @login.user_loader
 # def load_user(user_id):
-#     return Customer.query.get(customer_id)
+#     return User.query.get(user_id)
 
-db.init_app(app)
-migrate = Migrate(app, db)
+# login.init_app(app)
 
-login.init_app(app)
-
-login.login_view = 'auth.login'
-
-# moment = Moment(app)
-
-app.register_blueprint(auth)
+# login.login_view = 'auth.login'
 
 from . import routes
-from . import models
