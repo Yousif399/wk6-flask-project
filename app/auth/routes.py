@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-from .forms import RegisterForm, LoginForm
+from .forms import Signup, Login
 # from ..models import User
 from ..myfunctions import Amiibo
 from flask_login import current_user, login_user, logout_user
