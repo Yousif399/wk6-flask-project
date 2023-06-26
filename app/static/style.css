@@ -16,11 +16,25 @@ body{
 
 .payEnt{
     margin-left: 50%;
-    margin-right: 50
+    margin-right: 50%;
+}
+
+#ad{
+    width: 300px;
+    display: inline-block;
+}
+#pic{
+    width: 36rem; 
+    border-radius: 5px;
+}
+
+#ind{
+    margin-left: 0;
+    padding-left: 0;
 }
 #payEnt{
     margin-left: 50%;
-    margin-right: 50
+    margin-right: 50%;
 }
 /* .vr{ */
     /* border-style: solid;
