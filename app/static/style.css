@@ -18,6 +18,9 @@ body{
     margin-left: 50%;
     margin-right: 50%;
 }
+.textC{
+    text-align: center;
+}
 
 #ad{
     width: 300px;
@@ -36,6 +39,7 @@ body{
     margin-left: 50%;
     margin-right: 50%;
 }
+
 /* .vr{ */
     /* border-style: solid;
     border-width: 5px; */
