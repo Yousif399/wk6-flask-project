@@ -1,8 +1,14 @@
 from app import app
 
+
+from flask import render_template, request, url_for, redirect
+# from .models import User, Product
+from .myfunctions import Amiibo, Amiibo_all
+
 from flask import render_template, request, url_for, redirect,flash
 from .models import User, Product
 from .myfunctions import Amiibo
+
 from flask_login import current_user, login_required, login_user, logout_user
 
 @app.route('/')
@@ -10,10 +16,18 @@ from flask_login import current_user, login_required, login_user, logout_user
 def home():
     return render_template('home.html')
 
-@app.route('/products')
+@app.route('/products', methods=["GET", "POST"])
 # @login_required
 def products():
-    return render_template('products.html')
+    # if request.method == "POST":
+    #     for p in Product.query.all():
+    #         if p.product_id in request.form:
+    #             product_id = p.product_id
+    #             return redirect(url_for('product', product_id=product_id))
+                    # add this to href link on html to route to product {{ url_for(product, product_id=p.id) }}
+    amiibos = Amiibo_all()
+    p = amiibos.request_data()
+    return render_template('products.html', p=p)
 
 @app.route('/cart')
 # @login_required
@@ -49,13 +63,21 @@ def remove_product(product_id):
 # @login_required
 def clear_products():
     ### clear all items in the cart
+
+    # if current_user.added:
+    #     for product in current_user.added:
+    #         product.remove_it(current_user)
+    return redirect(url_for('products.html'))
+
     if current_user.added:
         for product in current_user.added:
             product.remove_it(current_user)
     return redirect(url_for('product.html'))
 
-@app.route('/product/<int:product_id>')
-# @login_required
-def product(product_id):
 
-    return render_template('ind-product.html')
+@app.route('/product/<int:product_no>')
+# @login_required
+def product(product_no):
+    amiibo = Amiibo(product_no)
+    # amiibo has methods .name .img_url .video_game .release etc. to use with jinja on html
+    return render_template('ind-product.html', p=amiibo)
