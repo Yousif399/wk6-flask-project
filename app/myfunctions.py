@@ -2,6 +2,21 @@
 
 import requests
 
+
+class Amiibo_all():
+    url = "https://www.amiiboapi.com/api/amiibo/"  
+
+    def request_data(self):
+        """
+        returns all amiibos as a list from i=0 to i=838
+        """
+        response = requests.get(self.url)
+        data = response.json()
+        if not response.ok:
+            print("error fetching url")
+        data = data["amiibo"]
+        return data
+
 # there are 839 different products in the api catalog
 class Amiibo():
     """
