@@ -19,11 +19,11 @@ def home():
 @app.route('/products', methods=["GET", "POST"])
 # @login_required
 def products():
-    # if request.method == "POST":
-    #     for p in Product.query.all():
-    #         if p.product_id in request.form:
-    #             product_id = p.product_id
-    #             return redirect(url_for('product', product_id=product_id))
+    if request.method == "POST":
+        for p in Product.query.all():
+            if p.product_id in request.form:
+                product_id = p.product_id
+                return redirect(url_for('product', product_id=product_id))
                     # add this to href link on html to route to product {{ url_for(product, product_id=p.id) }}
     amiibos = Amiibo_all()
     p = amiibos.request_data()

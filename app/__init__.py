@@ -15,7 +15,7 @@ from flask_migrate import Migrate
 app = Flask(__name__)
 
 app.config.from_object(Config)
-
+db.init_app(app)
 
 # enabling login persistence
 login = LoginManager()
@@ -23,6 +23,8 @@ login = LoginManager()
 @login.user_loader
 def load_user(user_id):
     return User.query.get(user_id)
+
+migrate = Migrate(app, db)
 
 login.init_app(app)
 

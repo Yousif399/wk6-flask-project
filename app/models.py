@@ -14,15 +14,13 @@ cart = db.Table(
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
-    first_name = db.Column(db.String(50), nullable=False, unique=True)
-    last_name = db.Column(db.String(50), nullable=False)
+    username = db.Column(db.String(50), nullable=False, unique=True)
     email = db.Column(db.String(50), nullable=False, unique=True)
     password = db.Column(db.String(), nullable=False, unique=True)
     product = db.relationship('Product', backref='Product', lazy=True)
 
-    def __init__(self,first_name,last_name,email,password):
-        self.first_name = first_name
-        self.last_name = last_name
+    def __init__(self,username,email,password):
+        self.username = username
         self.email = email
         self.password = generate_password_hash(password)
 
@@ -32,8 +30,8 @@ class User(db.Model, UserMixin):
         db.session.commit()
 
 class Product(db.Model):
-    product_id = db.Column(db.Integer, primary_key=True)
-    customer_id = db.Column(db.Integer, db.ForeignKey('customer.id'), nullable=False)
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     title = db.Column(db.String, nullable=False)
     description = db.Column(db.String)
     weight = db.Column(db.Integer)
